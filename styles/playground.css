@@ -8,7 +8,6 @@
     width: 100%;
     height: 100%;
     background-color: rgba(226, 208, 208, 0.5);
-    z-index: 98;
 }
 
 .closesvg {
@@ -51,3 +50,55 @@
     cursor: pointer;
     z-index: 99;
 }
+
+.input-count {
+    position: absolute;
+    display: flex;
+    bottom: 30px;
+    right: 290px;
+    height: 10px;
+    width: 30px;
+    border-radius: 10px;
+    padding: 15px;
+    border-width: 0px;
+    z-index: 99;
+    outline: none;
+}
+
+.generated-word {
+    position: absolute;
+    display: flex;
+    bottom: 80px;
+    right: 300px;
+    font-family: 'Fuzzy Bubbles', cursive;
+    font-size: 20px;
+}
+
+.playCard {
+    transition: transform 0.1s ease;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.playCard:hover .content {
+    transform: translateZ(12px);
+}
+
+.playCard::before {
+    content: "";
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 15px;
+  }
+
+  @media (prefers-reduced-motion) {
+    .playCard {
+      transform: none !important;
+    }
+  }
